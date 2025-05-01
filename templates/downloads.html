@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% block title %}Downloads - EduLink{% endblock title %}
+
+{% block content %}
+<h1 class="display-4 text-center my-5">Available Downloads</h1>
+
+<main>
+    <div class="container col-md-8 col-sm-12">
+        <div class="download-item mb-4">
+            <h2 class="">Quiz Preparation Guide</h2>
+            <p>Enhance your quiz-taking skills with our comprehensive guide. This resource provides tips and strategies to excel in quizzes.</p>
+            <a href="{% url 'download_guide' %}" class="btn btn-primary">Download</a>
+            <hr>
+        </div>
+        <div class="download-item mb-4">
+            <h2>Sample Quiz Questions</h2>
+            <p>Practice with a set of sample quiz questions covering various topics. Perfect for getting familiar with the quiz format.</p>
+            <a href="{% url 'download_sample_questions' %}" class="btn btn-primary">Download</a>
+            <hr>
+        </div>
+        <div class="download-item mb-4">
+            <h2>Quiz Analytics Report</h2>
+            <p>Explore insights from our latest quiz analytics report. Understand trends and performance metrics to improve your quizzes.</p>
+            <a href="{% url 'download_report' %}" class="btn btn-primary">Download</a>
+            <hr>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}

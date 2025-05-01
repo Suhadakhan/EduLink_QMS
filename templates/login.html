@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+
+{% block title %}Login to EduLink - Quiz Management{% endblock title %}
+
+{% block content %}
+
+<h1 class="display-4 text-center my-5">Login to EduLink Quiz Management</h1>
+
+<div class="container">
+    <div class="row row-cols-sm-1 row-cols-lg-3 container">
+        <div class="col-12"></div>
+        <div class="col-12">
+            <div>
+                {% for message in messages %}
+                <h5 class="text-danger">{{ message }}</h5>
+                {% endfor %}
+            </div>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="form-label visually-hidden">Username</label>
+                    <input type="text" name="username" class="form-control" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label visually-hidden">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary px-5">Login</button>
+            </form>
+            <p class="my-4">New to EduLink? <b><a href="{% url 'register' %}">Create an account</a></b></p>
+        </div>
+        <div class="col-12"></div>
+    </div>
+</div>
+
+{% endblock content %}

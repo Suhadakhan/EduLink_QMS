@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block title %}@{{request.user.username}} Profile Deletion Confirmation - EduLink{% endblock title %}
+
+{% block content %}
+
+<h1 class="display-4 text-center my-5">Profile Deletion Confirmation</h1>
+
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <p class="fs-4"><b>@{{request.user.username}}</b>, are you sure you want to delete your profile?</p>
+        <a href="{% url 'profile' request.user.username %}" class="btn btn-success" type="button">Return to Profile</a>
+        <input class="btn btn-danger" type="submit" value="Confirm Deletion">
+    </form>
+</div>
+
+{% endblock content %}
